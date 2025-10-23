@@ -1,229 +1,327 @@
 "use client"
 
 import { ThemeProvider } from "@/providers/ThemeProvider";
-import NavbarLayoutFloatingInline from '@/components/navbar/NavbarLayoutFloatingInline';
-import HeroBillboard from '@/components/sections/hero/HeroBillboard';
+import NavbarStyleMinimal from '@/components/navbar/NavbarStyleMinimal';
+import HeroSplit from '@/components/sections/hero/HeroSplit';
 import SplitAbout from '@/components/sections/about/SplitAbout';
-import ProductCardTwo from '@/components/sections/product/ProductCardTwo';
-import MetricCardTwo from '@/components/sections/metrics/MetricCardTwo';
-import TestimonialCardThree from '@/components/sections/testimonial/TestimonialCardThree';
-import ContactCenter from '@/components/sections/contact/ContactCenter';
-import FooterBase from '@/components/sections/footer/FooterBase';
-import { Award, BarChart3, Coffee, Heart, Leaf, Mail, Star, Users } from "lucide-react";
+import FeatureCardOne from '@/components/sections/feature/FeatureCardOne';
+import ProductCardThree from '@/components/sections/product/ProductCardThree';
+import MetricCardThree from '@/components/sections/metrics/MetricCardThree';
+import TeamCardTwo from '@/components/sections/team/TeamCardTwo';
+import TestimonialCardOne from '@/components/sections/testimonial/TestimonialCardOne';
+import ContactSplit from '@/components/sections/contact/ContactSplit';
+import FooterLogoEmphasis from '@/components/sections/footer/FooterLogoEmphasis';
+import { Coffee, Heart, Leaf, Flame, Home, Star, TrendingUp, Users, MessageCircle, MapPin } from "lucide-react";
 
 export default function Home() {
   return (
     <ThemeProvider
-      defaultButtonVariant="shift-hover"
-      defaultTextAnimation="entrance-slide"
+      defaultButtonVariant="icon-arrow"
+      defaultTextAnimation="reveal-blur"
       borderRadius="rounded"
     >
       <div id="nav" data-section="nav">
-        <NavbarLayoutFloatingInline
-          navItems={[
-            { name: "About", id: "about" },
-            { name: "Menu", id: "menu" },
-            { name: "Contact", id: "contact" }
-          ]}
-          brandName="Bean & Brew"
+        <NavbarStyleMinimal
+          logoSrc="https://images.pexels.com/photos/29200640/pexels-photo-29200640.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          logoAlt="Brew & Bean Coffee Shop"
+          brandName="Brew & Bean"
           button={{
             text: "Order Now",
             href: "contact"
           }}
         />
       </div>
-      
+
       <div id="hero" data-section="hero">
-        <HeroBillboard
-          title="Exceptional Coffee, Every Cup"
-          description="Discover the perfect blend of quality, comfort, and community at Bean & Brew - your neighborhood coffee destination"
-          tag="Fresh Roasted Daily"
+        <HeroSplit
+          title="Perfect Coffee, Every Time"
+          description="Experience the finest coffee beans sourced from around the world, expertly roasted and brewed to perfection in our cozy neighborhood shop."
+          tag="Freshly Roasted"
           tagIcon={Coffee}
           buttons={[
-            { text: "View Menu", href: "menu" },
-            { text: "Visit Us", href: "contact" }
-          ]}
-          imageSrc="https://images.pexels.com/photos/26492562/pexels-photo-26492562.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-        />
-      </div>
-      
-      <div id="about" data-section="about">
-        <SplitAbout
-          title="Our Story"
-          description="Founded in 2018, Bean & Brew is more than just a coffee shop - we're a community hub where great coffee meets genuine connections"
-          tag="About Us"
-          tagIcon={Heart}
-          bulletPoints={[
             {
-              title: "Artisan Crafted",
-              description: "Every cup is carefully prepared by our skilled baristas using premium, ethically sourced beans",
-              icon: Award
+              text: "Order Now",
+              href: "contact"
             },
             {
-              title: "Community Focused",
-              description: "We believe coffee brings people together and strive to create a welcoming space for all",
-              icon: Users
-            },
-            {
-              title: "Sustainable Choice",
-              description: "Committed to environmental responsibility with eco-friendly practices and local partnerships",
-              icon: Leaf
+              text: "Our Menu",
+              href: "product"
             }
           ]}
-          imageSrc="https://images.pexels.com/photos/17516410/pexels-photo-17516410.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          imageSrc="https://images.pexels.com/photos/26492562/pexels-photo-26492562.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          imageAlt="Cozy coffee shop interior with warm lighting"
           imagePosition="right"
         />
       </div>
-      
-      <div id="menu" data-section="menu">
-        <ProductCardTwo
-          title="Our Coffee Menu"
-          description="Carefully curated selection of premium coffee drinks made with love and expertise"
-          tag="Fresh Made"
+
+      <div id="about" data-section="about">
+        <SplitAbout
+          title="Our Story"
+          description="Founded in 2018, Brew & Bean is more than just a coffee shop. We're passionate about creating the perfect coffee experience through quality beans, expert brewing, and a welcoming atmosphere."
+          tag="Since 2018"
+          tagIcon={Heart}
+          bulletPoints={[
+            {
+              title: "Premium Beans",
+              description: "Sourced directly from sustainable farms worldwide",
+              icon: Leaf
+            },
+            {
+              title: "Expert Roasting",
+              description: "Small batch roasting for maximum freshness and flavor",
+              icon: Flame
+            },
+            {
+              title: "Cozy Atmosphere",
+              description: "A perfect place to relax, work, or catch up with friends",
+              icon: Home
+            }
+          ]}
+          imageSrc="https://images.pexels.com/photos/4109748/pexels-photo-4109748.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          imageAlt="Fresh coffee beans being roasted"
+          imagePosition="left"
+        />
+      </div>
+
+      <div id="feature" data-section="feature">
+        <FeatureCardOne
+          title="Why Choose Brew & Bean"
+          description="Discover what makes our coffee experience truly special"
+          tag="Quality First"
+          tagIcon={Star}
+          features={[
+            {
+              title: "Artisan Roasting",
+              description: "Our master roasters craft each blend with precision and passion for exceptional taste",
+              imageSrc: "https://images.pexels.com/photos/7125616/pexels-photo-7125616.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: "Coffee roasting process"
+            },
+            {
+              title: "Premium Equipment",
+              description: "State-of-the-art espresso machines ensure every cup meets our highest standards",
+              imageSrc: "https://images.pexels.com/photos/1835900/pexels-photo-1835900.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: "Professional espresso machine"
+            },
+            {
+              title: "Perfect Brew",
+              description: "Every cup is carefully crafted to bring out the unique flavors of our specialty blends",
+              imageSrc: "https://images.pexels.com/photos/460257/pexels-photo-460257.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: "Perfect coffee cup with steam"
+            }
+          ]}
+        />
+      </div>
+
+      <div id="product" data-section="product">
+        <ProductCardThree
+          title="Our Signature Drinks"
+          description="Handcrafted beverages made with love and premium ingredients"
+          tag="Popular Menu"
           tagIcon={Coffee}
           products={[
             {
-              id: "1",
-              brand: "Bean & Brew",
-              name: "Classic Espresso",
-              price: "$3.50",
-              rating: 5,
-              reviewCount: "127",
-              imageSrc: "https://images.pexels.com/photos/2347380/pexels-photo-2347380.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+              id: "americano",
+              name: "Classic Americano",
+              price: "$4.50",
+              imageSrc: "https://images.pexels.com/photos/4195602/pexels-photo-4195602.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: "Classic Americano coffee",
+              initialQuantity: 1
             },
             {
-              id: "2",
-              brand: "Bean & Brew",
-              name: "Cappuccino",
-              price: "$4.25",
-              rating: 5,
-              reviewCount: "89",
-              imageSrc: "https://images.pexels.com/photos/2559312/pexels-photo-2559312.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+              id: "cappuccino",
+              name: "Creamy Cappuccino",
+              price: "$5.25",
+              imageSrc: "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: "Cappuccino with foam art",
+              initialQuantity: 1
             },
             {
-              id: "3",
-              brand: "Bean & Brew",
-              name: "House Americano",
-              price: "$3.75",
-              rating: 4,
-              reviewCount: "156",
-              imageSrc: "https://images.pexels.com/photos/4195602/pexels-photo-4195602.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+              id: "cold-brew",
+              name: "Cold Brew Special",
+              price: "$4.75",
+              imageSrc: "https://images.pexels.com/photos/7282737/pexels-photo-7282737.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: "Cold brew coffee with ice",
+              initialQuantity: 1
             }
           ]}
         />
       </div>
-      
-      <div id="metrics" data-section="metrics">
-        <MetricCardTwo
-          title="Our Impact"
-          description="Numbers that reflect our commitment to quality and community"
-          tag="Statistics"
-          tagIcon={BarChart3}
+
+      <div id="metric" data-section="metric">
+        <MetricCardThree
+          title="Our Growing Community"
+          description="Numbers that reflect our commitment to quality and service"
+          tag="Since 2018"
+          tagIcon={TrendingUp}
           metrics={[
             {
-              id: "1",
-              value: "10,000+",
-              description: "Happy Customers Served"
+              id: "customers",
+              icon: Users,
+              title: "Happy Customers",
+              value: "2,500+"
             },
             {
-              id: "2",
-              value: "50+",
-              description: "Premium Coffee Varieties"
+              id: "cups",
+              icon: Coffee,
+              title: "Cups Served",
+              value: "15,000+"
             },
             {
-              id: "3",
-              value: "98%",
-              description: "Customer Satisfaction Rate"
-            },
-            {
-              id: "4",
-              value: "6",
-              description: "Years of Excellence"
+              id: "reviews",
+              icon: Star,
+              title: "Five Star Reviews",
+              value: "98%"
             }
           ]}
         />
       </div>
-      
-      <div id="testimonials" data-section="testimonials">
-        <TestimonialCardThree
+
+      <div id="team" data-section="team">
+        <TeamCardTwo
+          title="Meet Our Team"
+          description="The passionate people behind your perfect cup"
+          tag="Our Family"
+          tagIcon={Heart}
+          members={[
+            {
+              id: "sarah",
+              name: "Sarah Martinez",
+              role: "Head Barista",
+              description: "With 8 years of experience, Sarah ensures every cup meets our exacting standards. She's passionate about latte art and specialty brewing techniques.",
+              imageSrc: "https://images.pexels.com/photos/4349965/pexels-photo-4349965.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: "Sarah Martinez, Head Barista",
+              socialLinks: [
+                {
+                  icon: "Instagram",
+                  url: "https://instagram.com/sarah_coffee"
+                },
+                {
+                  icon: "Mail",
+                  url: "mailto:sarah@brewandbean.com"
+                }
+              ]
+            },
+            {
+              id: "michael",
+              name: "Michael Chen",
+              role: "Assistant Manager",
+              description: "Michael brings enthusiasm and expertise to our team, specializing in cold brew and seasonal drink creations.",
+              imageSrc: "https://images.pexels.com/photos/4790061/pexels-photo-4790061.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: "Michael Chen, Assistant Manager",
+              socialLinks: [
+                {
+                  icon: "Instagram",
+                  url: "https://instagram.com/michael_coffee"
+                },
+                {
+                  icon: "Mail",
+                  url: "mailto:michael@brewandbean.com"
+                }
+              ]
+            }
+          ]}
+        />
+      </div>
+
+      <div id="testimonial" data-section="testimonial">
+        <TestimonialCardOne
           title="What Our Customers Say"
-          description="Real reviews from coffee lovers who make Bean & Brew their daily destination"
+          description="Real reviews from coffee lovers who visit us daily"
           tag="Reviews"
-          tagIcon={Star}
+          tagIcon={MessageCircle}
           testimonials={[
             {
               id: "1",
-              name: "Sarah Mitchell",
-              handle: "@sarahmitchell",
-              testimonial: "Best coffee in town! The baristas really know their craft and the atmosphere is perfect for both work and relaxation.",
-              imageSrc: "https://images.pexels.com/photos/33409064/pexels-photo-33409064.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+              name: "Michael Chen",
+              role: "Software Developer",
+              company: "Tech Solutions Inc",
+              rating: 5,
+              imageSrc: "https://images.pexels.com/photos/33409064/pexels-photo-33409064.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: "Happy customer Michael Chen"
             },
             {
               id: "2",
-              name: "David Chen",
-              handle: "@davidchen",
-              testimonial: "I've been coming here for 3 years and the quality never disappoints. Great place to start the morning!",
-              imageSrc: "https://images.pexels.com/photos/6826026/pexels-photo-6826026.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+              name: "Emma Rodriguez",
+              role: "Marketing Manager",
+              company: "Creative Agency",
+              rating: 5,
+              imageSrc: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: "Business professional Emma Rodriguez"
             },
             {
               id: "3",
-              name: "Emily Rodriguez",
-              handle: "@emilyrod",
-              testimonial: "Love the community feel here. It's become my second office and the WiFi is excellent too!",
-              imageSrc: "https://images.pexels.com/photos/4350038/pexels-photo-4350038.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+              name: "Lisa Thompson",
+              role: "Freelance Writer",
+              company: "Independent",
+              rating: 5,
+              imageSrc: "https://images.pexels.com/photos/4827509/pexels-photo-4827509.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: "Young woman Lisa Thompson enjoying coffee"
             },
             {
               id: "4",
-              name: "Marcus Johnson",
-              handle: "@marcusj",
-              testimonial: "The attention to detail in every cup is amazing. You can taste the difference when coffee is made with passion.",
-              imageSrc: "https://images.pexels.com/photos/6864505/pexels-photo-6864505.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+              name: "David Park",
+              role: "Coffee Enthusiast",
+              company: "Local Resident",
+              rating: 5,
+              imageSrc: "https://images.pexels.com/photos/4790061/pexels-photo-4790061.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: "Coffee enthusiast David Park"
             }
           ]}
         />
       </div>
-      
+
       <div id="contact" data-section="contact">
-        <ContactCenter
-          tag="Stay Connected"
-          title="Join Our Coffee Community"
-          description="Get the latest updates on new blends, events, and exclusive offers delivered straight to your inbox"
-          tagIcon={Mail}
-          inputPlaceholder="Enter your email address"
-          buttonText="Subscribe"
-          termsText="By subscribing, you agree to receive our newsletter and can unsubscribe at any time."
+        <ContactSplit
+          tag="Visit Us"
+          tagIcon={MapPin}
+          title="Ready for Great Coffee?"
+          description="Join our community of coffee lovers. Sign up for exclusive offers, new blend announcements, and brewing tips from our expert baristas."
+          inputPlaceholder="Enter your email"
+          buttonText="Get Updates"
+          termsText="By signing up, you'll receive our weekly newsletter with coffee tips and exclusive offers. Unsubscribe anytime."
+          imageSrc="https://images.pexels.com/photos/3352765/pexels-photo-3352765.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          imageAlt="Brew & Bean coffee shop exterior"
+          mediaPosition="right"
         />
       </div>
-      
+
       <div id="footer" data-section="footer">
-        <FooterBase
+        <FooterLogoEmphasis
+          logoText="Brew & Bean"
           columns={[
             {
-              title: "Menu",
               items: [
-                { label: "Coffee", href: "menu" },
-                { label: "Pastries", href: "menu" },
-                { label: "Specialty Drinks", href: "menu" }
+                {
+                  label: "Our Story",
+                  href: "about"
+                },
+                {
+                  label: "Menu",
+                  href: "product"
+                },
+                {
+                  label: "Location",
+                  href: "contact"
+                }
               ]
             },
             {
-              title: "About",
               items: [
-                { label: "Our Story", href: "about" },
-                { label: "Sustainability", href: "about" },
-                { label: "Community", href: "about" }
-              ]
-            },
-            {
-              title: "Contact",
-              items: [
-                { label: "Visit Us", href: "contact" },
-                { label: "Catering", href: "contact" },
-                { label: "Events", href: "contact" }
+                {
+                  label: "Order Online",
+                  href: "contact"
+                },
+                {
+                  label: "Catering",
+                  href: "mailto:catering@brewandbean.com"
+                },
+                {
+                  label: "Gift Cards",
+                  href: "mailto:info@brewandbean.com"
+                }
               ]
             }
           ]}
-          copyrightText="© 2025 | Bean & Brew"
         />
       </div>
     </ThemeProvider>

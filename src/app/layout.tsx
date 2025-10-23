@@ -77,28 +77,35 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Bean & Brew - Exceptional Coffee, Every Cup",
-  description: "Discover premium coffee and community at Bean & Brew. Fresh roasted daily with artisan craftsmanship in a welcoming neighborhood atmosphere.",
-  keywords: "coffee shop, premium coffee, espresso, cappuccino, local coffee, fresh roasted, community coffee",
-  robots: {
-    index: true,
-    follow: true
+  title: "Brew & Bean - Perfect Coffee, Every Time | Artisan Coffee Shop",
+  description: "Experience premium coffee at Brew & Bean. Fresh roasted beans, expert baristas, and cozy atmosphere. Order now for the perfect cup every time.",
+  keywords: ["coffee shop", "artisan coffee", "fresh roasted beans", "espresso", "cappuccino", "local coffee"],
+  metadataBase: new URL("https://brewandbean.com"),
+  alternates: {
+    canonical: "https://brewandbean.com"
   },
   openGraph: {
-    title: "Bean & Brew - Exceptional Coffee, Every Cup",
-    description: "Discover premium coffee and community at Bean & Brew. Fresh roasted daily with artisan craftsmanship in a welcoming neighborhood atmosphere.",
-    siteName: "Bean & Brew",
-    images: [{
-      url: "https://images.pexels.com/photos/26492562/pexels-photo-26492562.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      alt: "Bean & Brew coffee shop interior"
-    }],
+    title: "Brew & Bean - Perfect Coffee, Every Time",
+    description: "Experience premium coffee at Brew & Bean. Fresh roasted beans, expert baristas, and cozy atmosphere.",
+    url: "https://brewandbean.com",
+    siteName: "Brew & Bean",
+    images: [
+      {
+        url: "https://images.pexels.com/photos/26492562/pexels-photo-26492562.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        alt: "Cozy coffee shop interior with warm lighting"
+      }
+    ],
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bean & Brew - Exceptional Coffee, Every Cup",
-    description: "Discover premium coffee and community at Bean & Brew. Fresh roasted daily with artisan craftsmanship.",
+    title: "Brew & Bean - Perfect Coffee, Every Time",
+    description: "Experience premium coffee at Brew & Bean. Fresh roasted beans, expert baristas, and cozy atmosphere.",
     images: ["https://images.pexels.com/photos/26492562/pexels-photo-26492562.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"]
+  },
+  robots: {
+    index: true,
+    follow: true
   }
 };
 
